@@ -159,6 +159,10 @@
         this.options.onDropdownHide = $.proxy(this.options.onDropdownHide, this);
         this.options.onDropdownShown = $.proxy(this.options.onDropdownShown, this);
         this.options.onDropdownHidden = $.proxy(this.options.onDropdownHidden, this);
+
+        if (typeof options.updateButtonText !== 'undefined' && typeof options.updateButtonText === 'function') {
+            this.updateButtonText = options.updateButtonText;
+        }
         
         // Build select all if enabled.
         this.buildContainer();
